@@ -1,5 +1,14 @@
 {
-    "name": "mp-ecommerce-php",
+    "name": "ceman/mp-ecommerce-php",
+    "description": "CHO MercadoPago",
     "type": "project",
-    "require": {}
+    "authors": [
+        {
+            "name": "Cesar",
+            "email": "mail.mansilla@gmail.com"
+        }
+    ],
+    "require": {
+        "mercadopago/dx-php": "^2.2"
+    }
 }
