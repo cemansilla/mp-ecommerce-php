@@ -10,6 +10,7 @@ return [
     ],
     'customer' => [
       'id' => '471923173',
+      'dni' => '12345678',
       'name' => 'Lalo',
       'last_name' => 'Landa',
       'email' => 'test_user_63274575@testuser.com',

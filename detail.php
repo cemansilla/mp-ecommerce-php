@@ -46,12 +46,11 @@ $payer->phone = array(
   "area_code" => $config['mercadopago']['customer']['tel_code'],
   "number" => $config['mercadopago']['customer']['tel']
 );
-/*
+
 $payer->identification = array(
   "type" => "DNI",
-  "number" => $config['mercadopago']['customer']['id']
+  "number" => $config['mercadopago']['customer']['dni']
 );
-*/
 
 $payer->address = array(
   "street_name" => $config['mercadopago']['customer']['address']['street'],
