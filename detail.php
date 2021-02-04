@@ -9,6 +9,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken($config['mercadopago']['seller']['access_token']);
+MercadoPago\SDK::setIntegratorId($config['mercadopago']['integrator-id']);
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -67,6 +68,9 @@ $preference->back_urls = array(
 
 // Número de orden del pedido (external_reference)
 $preference->external_reference = "mail.mansilla@gmail.com";
+
+$preference->auto_return = "approved";
+$preference->notification_url = $config['base_url'] . "webhook.php";
 
 $preference->save();
 ?>
@@ -172,6 +176,18 @@ $preference->save();
     }
   </style>
   <style type="text/css">
+    .mercadopago-button-payment {
+      padding: 0.9em 1.7142857142857142em;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.875em;
+      line-height: 2.7142857142857144;
+      background: #009ee3;
+      border-radius: 0.2857142857142857em;
+      color: #fff;
+      cursor: pointer;
+      border: 0;
+      text-decoration: none;
+    }
     .mercadopago-button {
       padding: 0 1.7142857142857142em;
       font-family: "Helvetica Neue", Arial, sans-serif;
@@ -616,10 +632,15 @@ $preference->save();
                     </h3>
                   </div>
 
+                  <a class="mercadopago-button-payment" href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
+
+                  <?php /*
                   <script
                     src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                    data-preference-id="<?php echo $preference->id; ?>">
+                    data-preference-id="<?php echo $preference->id; ?>"
+                    data-button-label="Pagar la compra (NO)">
                   </script>
+                  */ ?>
                 </div>
               </div>
             </div>
