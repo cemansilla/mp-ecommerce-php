@@ -9,7 +9,7 @@ require __DIR__ .  '/vendor/autoload.php';
 
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken($config['mercadopago']['seller']['access_token']);
-MercadoPago\SDK::setIntegratorId($config['mercadopago']['integrator-id']);
+MercadoPago\SDK::setIntegratorId($config['mercadopago']['integrator_id']);
 
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -46,11 +46,12 @@ $payer->phone = array(
   "area_code" => $config['mercadopago']['customer']['tel_code'],
   "number" => $config['mercadopago']['customer']['tel']
 );
-
+/*
 $payer->identification = array(
   "type" => "DNI",
   "number" => $config['mercadopago']['customer']['id']
 );
+*/
 
 $payer->address = array(
   "street_name" => $config['mercadopago']['customer']['address']['street'],

@@ -2,7 +2,7 @@
 return [
   'base_url' => ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['SERVER_NAME']}".str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']),
   'mercadopago' => [
-    'integrator-id' => 'dev_24c65fb163bf11ea96500242ac130004',
+    'integrator_id' => 'dev_24c65fb163bf11ea96500242ac130004',
     'seller' => [
       'collector_id' => '469485398',
       'public_key' => 'APP_USR-7eb0138a-189f-4bec-87d1-c0504ead5626',
